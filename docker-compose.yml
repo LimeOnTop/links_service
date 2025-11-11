@@ -1,0 +1,13 @@
+version: "3.9"
+
+services:
+  links-service:
+    build: .
+    container_name: links-service
+    environment:
+      - PORT=8080
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./data:/app/data
+    restart: unless-stopped
